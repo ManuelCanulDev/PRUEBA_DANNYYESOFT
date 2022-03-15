@@ -18,7 +18,6 @@ class CreateTwDocumentosTable extends Migration
             $table->string('S_Nombre',45);
             $table->tinyInteger('N_Obligatorio');
             $table->string('S_Descripcion',255)->nullable();
-            //$table->timestamps();
         });
     }
 

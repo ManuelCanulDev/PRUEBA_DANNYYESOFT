@@ -14,7 +14,7 @@ class AddForeignkeyTwContactosCorporativos extends Migration
     public function up()
     {
         Schema::table('tw_corporativos', function (Blueprint $table) {
-            $table->foreignId('FK_Asignado_id');
+            $table->foreignId('FK_Asignado_id')->nullable();
             $table->foreign('FK_Asignado_id')->references('id')->on('tw_contactos_corporativos');
         });
     }
@@ -27,6 +27,7 @@ class AddForeignkeyTwContactosCorporativos extends Migration
     public function down()
     {
         Schema::table('tw_corporativos', function (Blueprint $table) {
+            $table->dropForeign('tw_corporativos_fk_asignado_id_foreign');
             $table->dropColumn('FK_Asignado_id');
         });
     }

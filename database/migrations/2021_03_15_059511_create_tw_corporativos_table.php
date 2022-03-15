@@ -23,7 +23,7 @@ class CreateTwCorporativosTable extends Migration
             $table->string('S_DBPassword',100);
             $table->string('S_SystemUrl',255);
             $table->tinyInteger('S_Activo');
-            $table->dateTime('D_FechaIncorporacion');
+            $table->timestamp('D_FechaIncorporacion');
             $table->timestamps();
             $table->softDeletes();
             $table->foreignId('tw_usuarios_id');
